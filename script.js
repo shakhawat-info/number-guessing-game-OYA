@@ -47,7 +47,7 @@ function two(){
                 document.querySelector('b').innerHTML = 'Player 1 Winer'
                 playernumber.innerHTML = 'Player 1'
             }
-            if(PlayerInputOne.value == PlayerInputTwo.value && count >= 1){
+            if(PlayerInputOne.value == PlayerInputTwo.value){
                 document.querySelector('.playerboxone').style.display = 'none'
                 document.querySelector('.playerboxtwo').style.display = 'none'
                 document.querySelector('.result').style.display = 'grid'
