@@ -101,6 +101,13 @@ body {
   color: #daa520;
 }
 .main .playerbox .result b {
-  margin-top: 20px;
-  text-transform: uppercase;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.main .playerbox #eyeone , .main .playerbox #eyetwo{
+    position: absolute;
+    top: 9%;
+    right: 1%;
+    padding: 10px;
 }
