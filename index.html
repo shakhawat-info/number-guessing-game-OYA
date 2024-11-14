@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guess</title>
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <button class="playernumber">player 1</button>
+      <div class="playerbox">
+        <div class="item playerboxone">
+          <div class="inpbox">
+            <input
+              type="password"
+              class="form__input inputone"
+              name="name"
+              placeholder=""
+            />
+            <span class="status inptuonestatus"
+              ><i class="fa-solid fa-triangle-exclamation"></i> Please Enter a
+              number between 1-10</span
+            >
+            <label class="form__label" name="name">Enter Number</label>
+          </div>
+          <button type="button" class="submition plsub1">submit</button>
+        </div>
+
+        <div class="item playerboxtwo">
+          <div class="inpbox">
+            <input
+              type="text"
+              class="form__input inputtwo"
+              name="name"
+              placeholder=""
+            />
+            <span class="status inputtwostatus"
+              ><i class="fa-solid fa-triangle-exclamation"></i> Please Enter a
+              number between 1-10</span
+            >
+            <label class="form__label" name="name">Enter Number</label>
+          </div>
+          <button type="button" class="submition plsub2">submit</button>
+        </div>
+        <div class="result">
+            <i class="fa-solid fa-trophy"></i>
+            <b></b>
+        </div>
+      </div>
+      <button class="reset">Reset Game</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
