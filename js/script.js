@@ -1,13 +1,44 @@
 let PlayerBtnOne = document.querySelector(".plsub1");
 let PlayerBtnTwo = document.querySelector(".plsub2");
+let PlayerBtnThree = document.querySelector(".plsub3");
+let PlayerBtnFour = document.querySelector(".plsub4");
+
+
 
 let PlayerInputOne = document.querySelector(".inputone");
 let PlayerInputTwo = document.querySelector(".inputtwo");
+let PlayerInputThree = document.querySelector(".inputthree");
+let PlayerInputFour = document.querySelector(".inputfour");
 
-document.querySelector(".playerboxtwo").style.display = "none";
+
+
+
+
+
+let playerboxone = document.querySelector(".playerboxone");
+let playerboxtwo = document.querySelector(".playerboxtwo");
+let playerboxthree = document.querySelector(".playerboxthree");
+let playerboxfour = document.querySelector(".playerboxfour");
+
+
+
+let InputOneStatus = document.querySelector(".inptuonestatus");
+let InputTwoStatus = document.querySelector(".inputtwostatus");
+let InputThreeStatus = document.querySelector(".inputthreestatus");
+let InputFourStatus = document.querySelector(".inputfourstatus");
+
+
+
+
+playerboxtwo.style.display = "none";
+playerboxthree.style.display = "none";
+playerboxfour.style.display = "none";
 document.querySelector(".result").style.display = "none";
 
 let playernumber = document.querySelector(".playernumber");
+
+let count = 5;
+let winner = document.querySelector('b')
 
 function one() {
   PlayerBtnOne.addEventListener("click", () => {
@@ -19,9 +50,9 @@ function one() {
     ) {
       document.querySelector(".inptuonestatus").style.color = "#ff0000";
     } else {
-      document.querySelector(".inptuonestatus").style.color = "transparent";
-      document.querySelector(".playerboxone").style.display = "none";
-      document.querySelector(".playerboxtwo").style.display = "block";
+      InputOneStatus.style.color = "transparent";
+      playerboxone.style.display = "none";
+      playerboxtwo.style.display = "block";
       playernumber.innerHTML = "Player 2";
     }
   });
@@ -39,33 +70,29 @@ function one() {
 one();
 
 function two() {
-  let count = 5;
+
   PlayerBtnTwo.addEventListener("click", () => {
-    if (
-      !PlayerInputTwo ||
-      PlayerInputTwo.value < 1 ||
-      PlayerInputTwo.value > 10 ||
-      isNaN(PlayerInputTwo.value)
-    ) {
-      document.querySelector(".inputtwostatus").innerHTML = `
+    if ( !PlayerInputTwo || PlayerInputTwo.value < 1 || PlayerInputTwo.value > 10 || isNaN(PlayerInputTwo.value)) {
+      InputTwoStatus.innerHTML = `
       <i class="fa-solid fa-triangle-exclamation"></i> Please Enter a number between 1-10`;
-      document.querySelector(".inputtwostatus").style.color = "#ff0000";
+      InputTwoStatus.style.color = "#ff0000";
     } else {
       count -= 1;
-      document.querySelector(".inputtwostatus").style.color = "#ff0000";
-      document.querySelector(".inputtwostatus").innerHTML = `You can try ${count} times`;
+      InputTwoStatus.style.color = "#ff0000";
+      InputTwoStatus.innerHTML = `You can try ${count} times`;
       if (PlayerInputOne.value != PlayerInputTwo.value && count < 1) {
-        document.querySelector(".playerboxone").style.display = "none";
-        document.querySelector(".playerboxtwo").style.display = "none";
-        document.querySelector(".result").style.display = "grid";
-        document.querySelector("b").innerHTML = "Player 1 Winer";
-        playernumber.innerHTML = "Player 1";
+        playerboxone.style.display = "none";
+        playerboxtwo.style.display = "none";
+        playerboxthree.style.display = "block";
+        playernumber.innerHTML = "Player 3";
+        count = 5;
       }
       if (PlayerInputOne.value == PlayerInputTwo.value) {
-        document.querySelector(".playerboxone").style.display = "none";
-        document.querySelector(".playerboxtwo").style.display = "none";
-        document.querySelector(".result").style.display = "grid";
-        document.querySelector("b").innerHTML = "Player 2 Winer";
+        playerboxone.style.display = "none";
+        playerboxtwo.style.display = "none";
+        playerboxthree.style.display = "block";
+        playernumber.innerHTML = "Player 3";
+        count = 5;
       }
     }
   });
@@ -82,6 +109,138 @@ function two() {
 }
 two();
 
+
+
+
+
+function three(){
+  PlayerBtnThree.addEventListener('click' , ()=>{
+    if ( !PlayerInputThree || PlayerInputThree.value < 1 || PlayerInputThree.value > 10 || isNaN(PlayerInputThree.value)) {
+      InputThreeStatus.innerHTML = `
+      <i class="fa-solid fa-triangle-exclamation"></i> Please Enter a number between 1-10`;
+      InputThreeStatus.style.color = "#ff0000";
+    }
+    else {
+      count -= 1;
+      InputThreeStatus.style.color = "#ff0000";
+      InputThreeStatus.innerHTML = `You can try ${count} times`;
+      if (PlayerInputOne.value != PlayerInputThree.value && count < 1) {
+        playerboxone.style.display = "none";
+        playerboxtwo.style.display = "none";
+        playerboxthree.style.display = "none";
+        playerboxfour.style.display = "block";
+        playernumber.innerHTML = "Player 4";
+        count = 5
+      }
+      if (PlayerInputOne.value == PlayerInputThree.value) {
+        playerboxone.style.display = "none";
+        playerboxtwo.style.display = "none";
+        playerboxthree.style.display = "none";
+        playerboxfour.style.display = "block";
+        playernumber.innerHTML = "Player 4";
+        count = 5
+      }
+    }
+  });
+  let eyethree = document.querySelector("#eyethree");
+  eyethree.addEventListener("click", () => {
+    if (PlayerInputThree.type === "text") {
+      PlayerInputThree.type = "password";
+      eyethree.classList = 'fa-regular fa-eye-slash'
+    } else {
+        PlayerInputThree.type = "text";
+        eyethree.classList = 'fa-regular fa-eye'
+    }
+  });
+}
+three();
+
+
+
+
+
+
+
+function four(){
+  PlayerBtnFour.addEventListener('click' , ()=>{
+    if ( !PlayerInputFour || PlayerInputFour.value < 1 || PlayerInputFour.value > 10 || isNaN(PlayerInputFour.value)) {
+      InputFourStatus.innerHTML = `
+      <i class="fa-solid fa-triangle-exclamation"></i> Please Enter a number between 1-10`;
+      InputFourStatus.style.color = "#ff0000";
+    }
+    else {
+      count -= 1;
+      InputFourStatus.style.color = "#ff0000";
+      InputFourStatus.innerHTML = `You can try ${count} times`;
+      if (PlayerInputOne.value != PlayerInputFour.value && count < 1) {
+        playerboxone.style.display = "none";
+        playerboxtwo.style.display = "none";
+        playerboxthree.style.display = "none";
+        playerboxfour.style.display = "none";
+        playernumber.innerHTML = "RESULT";
+        document.querySelector(".result").style.display = "grid";
+        Result();
+      }
+      if (PlayerInputOne.value == PlayerInputFour.value) {
+        playerboxone.style.display = "none";
+        playerboxtwo.style.display = "none";
+        playerboxthree.style.display = "none";
+        playerboxfour.style.display = "none";
+        playernumber.innerHTML = "RESULT";
+        document.querySelector(".result").style.display = "grid";
+        Result();
+      }
+    }
+  });
+  let eyefour = document.querySelector("#eyefour");
+  eyefour.addEventListener("click", () => {
+    if (PlayerInputFour.type === "text") {
+      PlayerInputFour.type = "password";
+      eyefour.classList = 'fa-regular fa-eye-slash'
+    } else {
+        PlayerInputFour.type = "text";
+        eyefour.classList = 'fa-regular fa-eye'
+    }
+  });
+}
+four();
+
+function Result(){
+  if(PlayerInputOne.value == PlayerInputTwo.value && PlayerInputOne.value != PlayerInputThree.value && PlayerInputOne.value != PlayerInputFour.value){
+    winner.innerHTML = 'WINNER PLAYER 2'
+  }
+  else if(PlayerInputOne.value != PlayerInputTwo.value && PlayerInputOne.value == PlayerInputThree.value && PlayerInputOne.value != PlayerInputFour.value){
+    winner.innerHTML = 'WINNER PLAYER 3'
+  }
+  else if(PlayerInputOne.value != PlayerInputTwo.value && PlayerInputOne.value != PlayerInputThree.value && PlayerInputOne.value == PlayerInputFour.value){
+    winner.innerHTML = 'WINNER PLAYER 4'
+  }
+  else if(PlayerInputOne.value == PlayerInputTwo.value && PlayerInputOne.value == PlayerInputThree.value && PlayerInputOne.value != PlayerInputFour.value){
+    winner.innerHTML = 'WINNER PLAYER 2 & 3'
+  }
+  else if(PlayerInputOne.value == PlayerInputTwo.value && PlayerInputOne.value != PlayerInputThree.value && PlayerInputOne.value == PlayerInputFour.value){
+    winner.innerHTML = 'WINNER PLAYER 2 & 4'
+  }
+  else if(PlayerInputOne.value != PlayerInputTwo.value && PlayerInputOne.value == PlayerInputThree.value && PlayerInputOne.value == PlayerInputFour.value){
+    winner.innerHTML = 'WINNER PLAYER 3 & 4'
+  }
+  else if(PlayerInputOne.value == PlayerInputTwo.value && PlayerInputOne.value == PlayerInputThree.value && PlayerInputOne.value == PlayerInputFour.value){
+    winner.innerHTML = 'ALL PLAYER WINNER'
+  }
+  else{
+    winner.innerHTML = 'WINNER PLAYER 1'
+  }
+}
+
+
+
+
+
+
+
 document.querySelector(".reset").addEventListener("click", () => {
   location.reload();
 });
+
+
+

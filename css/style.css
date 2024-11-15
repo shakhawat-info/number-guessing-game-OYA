@@ -103,9 +103,10 @@ body {
 .main .playerbox .result b {
     margin-top: 20px;
     text-transform: uppercase;
+    display: block;
 }
 
-.main .playerbox #eyeone , .main .playerbox #eyetwo{
+.main .playerbox #eyeone , .main .playerbox #eyetwo , .main .playerbox #eyethree , .main .playerbox #eyefour{
     position: absolute;
     top: 9%;
     right: 1%;
