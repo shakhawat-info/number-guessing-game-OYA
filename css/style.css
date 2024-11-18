@@ -103,9 +103,13 @@ body {
   color: #daa520;
 }
 .main .playerbox .result b {
-    margin-top: 20px;
-    text-transform: uppercase;
-    display: block;
+  margin-top: 20px;
+  text-transform: uppercase;
+  display: block;
+}
+.main .playerbox .result .givennmbr{
+  margin-top: 20px;
+  color: #0b192c;
 }
 
 .main .playerbox #eyeone , .main .playerbox #eyetwo , .main .playerbox #eyethree , .main .playerbox #eyefour{
