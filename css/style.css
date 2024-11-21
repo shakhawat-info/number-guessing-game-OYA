@@ -107,14 +107,23 @@ body {
   text-transform: uppercase;
   display: block;
 }
-.main .playerbox .result .givennmbr{
+.main .playerbox .result .givennmbr {
   margin-top: 20px;
   color: #0b192c;
 }
 
-.main .playerbox #eyeone , .main .playerbox #eyetwo , .main .playerbox #eyethree , .main .playerbox #eyefour{
-    position: absolute;
-    top: 9%;
-    right: 1%;
-    padding: 10px;
+.main .playerbox #eyeone,
+.main .playerbox #eyetwo,
+.main .playerbox #eyethree,
+.main .playerbox #eyefour,
+.main .playerbox #eyefive,
+.main .playerbox #eyesix,
+.main .playerbox #eyeseven,
+.main .playerbox #eyeeight,
+.main .playerbox #eyenine,
+.main .playerbox #eyeten {
+  position: absolute;
+  top: 9%;
+  right: 1%;
+  padding: 10px;
 }
