@@ -582,7 +582,7 @@ function Result() {
     resultMessage = "All Players Winner";
   } else {
     resultMessage = `Player${winners.length > 1 ? "s" : ""} ${winners.join(
-      " - "
+      " , "
     )} Winner`;
   }
 
